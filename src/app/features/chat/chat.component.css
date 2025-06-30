@@ -1,0 +1,59 @@
+/*CONTENEDOR PRINCIPAL*/
+.chat-container{
+    height: 100%; /*se extiende al 100% del contenedor padre*/
+    display: flex;
+    flex-direction: column; /*orientacion vertical*/
+}
+
+.chat-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /*crece para ocupar espacio disponible*/
+    margin: 0;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /*sombra sutil*/
+}
+/*ventana del scroll - donde aparecen los msj */
+.chat-window{
+    flex: 1;
+    overflow: hidden;
+}
+
+/*definimos padding y estilo del contenido*/
+
+.chat-window .p-scrollpanel-content{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: white;
+    overflow-y: auto; /*scroll vertical activado cuando el contenido excede el auto*/
+}
+
+/*margen lateral extra para las burbujas de mensaje*/
+
+.message{
+    margin: 0 1.5rem; /*margenes izquierdo y derecho para separar bordes*/
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.timestamp {
+    font-size: 0.8em; /*tamaño de fuente mas pequeño*/
+    opacity: 0.7; /*texto atenuado para no competir con el principal*/
+
+}
+
+/*overlay de spinner de carga*/
+.spinner-overlay{
+    position: absolute; /*Posicionamiento absoluto relativo al contenedor padre*/
+    top: 0; left: 0; right: 0; bottom: 0; /*se extiende por todo el contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 10; /*colocar el overplay por encima de otros elementos*/
+}
